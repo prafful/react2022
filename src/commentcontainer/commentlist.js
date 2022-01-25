@@ -14,26 +14,32 @@ class CommentList extends React.Component {
                             mytitle="NFTs are cool!"
                             like="8"
                             description="NFTs are cool! They will create new revenue streams for artists and content creators."
-                            test={this.props.children}>
-                        </Comment>
+                            >
+                                One
+                                </Comment>
                     </li>
                     <li>
                         <Comment
                             mytitle="Blockchain is the future!"
                             like="18"
                             description="Cryptocurrency and NFTs are applicatio of Block chain.">
-                        </Comment></li>
+                                Two
+                        </Comment>
+                        </li>
                     <li>
                         <Comment
                             mytitle="Learn to unwork!"
                             like="80"
                             description="What a pleasure it would be?">
+                                Three
                         </Comment></li>
                     <li>
                         <Comment
                             mytitle="Any day is holiday!"
                             like="800"
-                            description="In my dreams!"></Comment></li>
+                            description="In my dreams!">
+                                Four
+                                </Comment></li>
 
                 </ol>
 

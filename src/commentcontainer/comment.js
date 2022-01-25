@@ -9,7 +9,7 @@ class Comment extends React.Component {
     render() { 
         return (
             <div>
-                <h1>{this.props.test} </h1>
+                <h1>{this.props.children} </h1>
                 <Title  style={{border:"1px solid blue"}} title={this.props.mytitle}></Title>
                 <Description desc={this.props.description}></Description>
                 <Action like={this.props.like}></Action>
