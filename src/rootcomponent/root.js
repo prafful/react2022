@@ -1,5 +1,8 @@
 import React from 'react';
 import CommentList from '../commentcontainer/commentlist';
+import Content from '../content/content';
+import Menu from '../menu/menu';
+import Rainbow from '../rainbow/rainbow';
 
 
 
@@ -24,7 +27,7 @@ class FirstComponent extends React.Component {
     render() {
         return (
             <span>
-               
+
                 <div>
                     <span>
                         <h1 style={this.mystyle}>Root Component</h1>
@@ -37,11 +40,10 @@ class FirstComponent extends React.Component {
                         <hr></hr>
                     </span>
                     <span></span>
-                </div> 
+                </div>
                 <div>
-                    I will contain all child components going forward.
-                    <CommentList>Technology Comments</CommentList>
-                    
+                    <Menu></Menu>
+                    <Content></Content>
                 </div>
             </span>
         );

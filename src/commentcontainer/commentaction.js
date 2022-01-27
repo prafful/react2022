@@ -10,7 +10,6 @@ class Action extends React.Component {
             name: "OMG",
             likevalue: parseInt(this.props.like)
         }
-
         this.minusLike = this.minusLike.bind(this)
     }
 
