@@ -1,4 +1,5 @@
 import React from 'react';
+import SingleTodo from './singletodo';
 
 class TodoList extends React.Component {
 
@@ -53,14 +54,23 @@ class TodoList extends React.Component {
     addFriend=()=>{
         this.state.friends.push(this.state.name)
         this.setState({friends: this.state.friends})
-        console.log(this.state.friends);
+        console.log(this.state.friends)
+        this.setState({name: ""})
     }
 
+    deleteMe=(id)=>{
+        console.log("delete friend: " + id);
+    }
     getAllTodos=()=>{
         return (
-          this.state.friends.map((f)=>{
+          this.state.friends.map((f, index)=>{
              return (
-                 <li>{f}</li>
+                <SingleTodo 
+                        key={index}
+                        friend={f}
+                        currentIndex = {index}
+                        deleteId={this.deleteMe}>
+                </SingleTodo>
              )
           })
         )
@@ -71,7 +81,7 @@ class TodoList extends React.Component {
             <div>
                 <br></br>
                 <label>Name: </label>
-                <input type="text" onChange={this.getName} ></input>
+                <input type="text" onChange={this.getName} value={this.state.name}></input>
                 &nbsp;
                 <button onClick={this.addFriend}>Add</button>
                 <br></br>
@@ -79,10 +89,7 @@ class TodoList extends React.Component {
                 
                 <br></br>
                 <ol>
-                    <li>First todo </li>
-                    <li>Second todo</li>
-                    <li>First todo </li>
-                    <li>Second todo</li>
+                   
                     {this.getAllTodos()}
                 </ol>
 
