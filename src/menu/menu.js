@@ -10,7 +10,9 @@ class Menu extends React.Component {
                 <Link to="/">Home</Link> &nbsp;
                 <Link to="/rainbow">Rainbow</Link> &nbsp;
                 <Link to="/comment">Comment</Link> &nbsp;
-                <Link to="/todo">Todo</Link> &nbsp;
+                <Link to="/todo">Friends</Link> &nbsp;
+                <Link to="/lifecycle">Lifecycle</Link> &nbsp;
+                <Link to="/remote">Remote</Link> &nbsp;
             </div>
         );
     }

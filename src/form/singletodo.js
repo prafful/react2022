@@ -8,6 +8,10 @@ class SingleTodo extends React.Component {
         
     }
 
+    componentWillUnmount(){
+        console.log("Unmounted SingleTodo with id:" + this.props.currentIndex);
+    }
+
     render() { 
         return (
             <li>

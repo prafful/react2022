@@ -59,19 +59,45 @@ class TodoList extends React.Component {
     }
 
     deleteMe=(id)=>{
-        console.log("delete friend: " + id);
+        console.log("delete friend: " + id)
+        this.state.friends.splice(id, 1)
+        this.setState({friends: this.state.friends})
+        console.log("After deletion")
+        console.log(this.state.friends)
+
     }
+
+    // workWithFriend=(f, index)=>{
+    //     return (
+    //         <SingleTodo 
+    //                 key={index}
+    //                 friend={f}
+    //                 currentIndex = {index}
+    //                 deleteId={this.deleteMe}>
+    //         </SingleTodo>
+    //      )
+    // }
+
+
+    // getAllTodos=()=>{
+    //     return (
+    //       this.state.friends.map(this.workWithFriend)
+    //     )
+    // }
+
     getAllTodos=()=>{
         return (
-          this.state.friends.map((f, index)=>{
-             return (
-                <SingleTodo 
+          this.state.friends.map((frn, index)=>{
+              return (
+                  <SingleTodo
                         key={index}
-                        friend={f}
-                        currentIndex = {index}
-                        deleteId={this.deleteMe}>
-                </SingleTodo>
-             )
+                        friend={frn}
+                        currentIndex ={index}
+                        deleteId={this.deleteMe}
+                  >
+
+                  </SingleTodo>
+              )
           })
         )
     }
@@ -92,11 +118,6 @@ class TodoList extends React.Component {
                    
                     {this.getAllTodos()}
                 </ol>
-
-
-
-
-
 
                 <hr></hr>
                 R: <input type="range" id="vol" name="vol" min="0" max="255" onChange={this.getRColor}/>
