@@ -1,0 +1,50 @@
+{
+  "allfriends": [
+    {
+      "id": 1,
+      "name": "Obb",
+      "location": "Tokyo",
+      "since": 8,
+      "active": false
+    },
+    {
+      "name": "Gitpo",
+      "location": "Seoul",
+      "since": 4,
+      "active": true,
+      "id": 2
+    },
+    {
+      "name": "Che",
+      "location": "Iceland",
+      "since": 2,
+      "active": true,
+      "id": 3
+    },
+    {
+      "name": "Theia",
+      "location": "Russia",
+      "since": 2,
+      "active": false,
+      "id": 4
+    }
+  ],
+  "allocations": [
+    {
+      "id": 1,
+      "city": "Tokyo"
+    },
+    {
+      "id": 2,
+      "city": "Mumbai"
+    },
+    {
+      "id": 3,
+      "city": "Chennai"
+    },
+    {
+      "city": "Baikit",
+      "id": 4
+    }
+  ]
+}

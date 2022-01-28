@@ -6,6 +6,8 @@ import Home from '../home/home';
 import Lifecycle from '../lifecycle/lifecycle';
 import Rainbow from '../rainbow/rainbow';
 import RemoteUsers from '../remote/remote';
+import FriendsCommunity from '../social/community';
+import NewFriend from '../social/newfriend';
 
 
 class Content extends React.Component {
@@ -19,6 +21,8 @@ class Content extends React.Component {
                 <Route path="/todo" element={<TodoList></TodoList>}></Route>
                 <Route path="/lifecycle" element={<Lifecycle></Lifecycle>}></Route>
                 <Route path="/remote" element={<RemoteUsers></RemoteUsers>}></Route>
+                <Route path="/community" element={<FriendsCommunity></FriendsCommunity>}></Route>
+                <Route path="/newfriend" element={<NewFriend></NewFriend>}></Route>
             </Routes>
         );
     }

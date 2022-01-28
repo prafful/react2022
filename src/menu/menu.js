@@ -13,6 +13,7 @@ class Menu extends React.Component {
                 <Link to="/todo">Friends</Link> &nbsp;
                 <Link to="/lifecycle">Lifecycle</Link> &nbsp;
                 <Link to="/remote">Remote</Link> &nbsp;
+                <Link to="/community">Community</Link> &nbsp;
             </div>
         );
     }
