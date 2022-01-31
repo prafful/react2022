@@ -3,7 +3,17 @@ import React from 'react';
 
 
 class Friend extends React.Component {
-    state = {}
+    
+    deleteFriendWithId=()=>{
+        console.log("Delete friend with id: "  + this.props.id);
+        this.props.deleteId(this.props.id)
+    }
+
+    updateFriendWithId=()=>{
+        console.log("Update friend with id: "  + this.props.id);
+        this.props.updateId(this.props.id)
+    }
+
     render() {
         return (
             <tr>
@@ -13,10 +23,10 @@ class Friend extends React.Component {
                 <td>{this.props.friendsince}</td>
                 <td>{this.props.active ? "Yes": "No"}</td>
                 <td>
-                    <button>Update</button>
+                    <button onClick={this.updateFriendWithId}>Update</button>
                 </td>
                 <td>
-                    <button>Delete</button>
+                    <button onClick={this.deleteFriendWithId}>Delete</button>
                 </td>
             </tr>
         );

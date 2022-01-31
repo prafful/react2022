@@ -5,9 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import Friend from './friend';
 
 
-export const  withNavigation = (FriendCommunityComponent) => {
-    return props => <FriendCommunityComponent {...props} navigateNow={useNavigate()} />;
-} 
+export const wrapHookInClassFoUseNavigate = (FriendCommunityComponentInstance) => {
+    return props => <FriendCommunityComponentInstance {...props} navigateNow={useNavigate()} />;
+}
 
 
 class FriendsCommunity extends React.Component {
@@ -15,7 +15,9 @@ class FriendsCommunity extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            allfriends: []
+            allfriends: [],
+            updateId: null,
+            displayCSS: { display: "none" }
         }
     }
 
@@ -33,6 +35,23 @@ class FriendsCommunity extends React.Component {
             })
     }
 
+    deleteWithId = (id) => {
+        console.log("In FriendsCommunity: " + id);
+        axios.delete("http://localhost:3000/allfriends" + "/" + id)
+            .then(response => {
+                console.log(response);
+                this.getAllFriends()
+            }, error => {
+                console.log(error);
+            })
+
+    }
+
+    updateWithId = (id) => {
+        console.log("Update friend with id: " + id);
+        this.setState({ displayCSS: { display: "inline" } })
+    }
+
     displayAllFriends = () => {
         return this.state.allfriends.map(friend => {
             return (
@@ -42,13 +61,15 @@ class FriendsCommunity extends React.Component {
                     location={friend.location}
                     friendsince={friend.since}
                     active={friend.active}
-                    >
+                    deleteId={this.deleteWithId}
+                    updateId={this.updateWithId}
+                >
                 </Friend>
             )
         })
     }
 
-    navigateToAddNew=()=>{
+    navigateToAddNew = () => {
         console.log(this.props)
         this.props.navigateNow("/newfriend")
     }
@@ -58,9 +79,9 @@ class FriendsCommunity extends React.Component {
         return (
             <div>
                 <h1>CRUD with friends!</h1>
-                    <button onClick={this.navigateToAddNew}>Add New</button>
-               <br></br> <br></br>
-               
+                <button onClick={this.navigateToAddNew}>Add New</button>
+                <br></br> <br></br>
+
                 <table border="1">
                     <thead>
                         <tr>
@@ -77,9 +98,14 @@ class FriendsCommunity extends React.Component {
                     </tbody>
 
                 </table>
+
+                <div style={this.state.displayCSS}>
+                    <h3>Update friend</h3>
+                </div>
+
             </div>
         );
     }
 }
 
-export default withNavigation(FriendsCommunity);
+export default wrapHookInClassFoUseNavigate(FriendsCommunity);
