@@ -1,15 +1,15 @@
 {
   "allfriends": [
     {
-      "id": 1,
-      "name": "Obb",
+      "name": "ObbO",
       "location": "Tokyo",
       "since": 8,
-      "active": false
+      "active": "true",
+      "id": 1
     },
     {
-      "name": "Gitpo",
-      "location": "Seoul",
+      "name": "Gitpod",
+      "location": "Seo",
       "since": 4,
       "active": true,
       "id": 2
@@ -22,16 +22,16 @@
       "id": 3
     },
     {
-      "name": "Theia",
+      "name": "Theia Editor",
       "location": "Russia",
       "since": 2,
-      "active": false,
+      "active": "true",
       "id": 4
     },
     {
       "name": "Umai",
-      "location": "Phil",
-      "since": null,
+      "location": "Philippines",
+      "since": "8",
       "active": false,
       "id": 5
     }

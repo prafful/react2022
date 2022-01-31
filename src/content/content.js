@@ -8,6 +8,7 @@ import Rainbow from '../rainbow/rainbow';
 import RemoteUsers from '../remote/remote';
 import FriendsCommunity from '../social/community';
 import NewFriend from '../social/newfriend';
+import UpdateFriend from '../social/update';
 
 
 class Content extends React.Component {
@@ -23,6 +24,7 @@ class Content extends React.Component {
                 <Route path="/remote" element={<RemoteUsers></RemoteUsers>}></Route>
                 <Route path="/community" element={<FriendsCommunity></FriendsCommunity>}></Route>
                 <Route path="/newfriend" element={<NewFriend></NewFriend>}></Route>
+                <Route path="/updatefriend/:id" element={<UpdateFriend></UpdateFriend>}></Route>
             </Routes>
         );
     }

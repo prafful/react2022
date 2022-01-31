@@ -14,6 +14,12 @@ class Friend extends React.Component {
         this.props.updateId(this.props.id)
     }
 
+    updateFriendWithIdNew=()=>{
+        console.log("Update friend with id new: "  + this.props.id);
+        this.props.updateIdNew(this.props.id)
+    }
+
+
     render() {
         return (
             <tr>
@@ -27,6 +33,9 @@ class Friend extends React.Component {
                 </td>
                 <td>
                     <button onClick={this.deleteFriendWithId}>Delete</button>
+                </td>
+                <td>
+                    <button onClick={this.updateFriendWithIdNew}>Update In New Component</button>
                 </td>
             </tr>
         );
