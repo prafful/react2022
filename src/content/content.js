@@ -2,8 +2,9 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import CommentList from '../commentcontainer/commentlist';
 import TodoList from '../form/todo';
-import Container from '../functional/container';
-import ParentFunction from '../functional/hookparentchild';
+import EffectContainer from '../functional/useeffect/effectcontainer';
+import Container from '../functional/usestate/container';
+import ParentFunction from '../functional/usestate/hookparentchild';
 import Home from '../home/home';
 import Lifecycle from '../lifecycle/lifecycle';
 import Rainbow from '../rainbow/rainbow';
@@ -29,6 +30,7 @@ class Content extends React.Component {
                 <Route path="/updatefriend/:id" element={<UpdateFriend></UpdateFriend>}></Route>
                 <Route path="/hooks" element={<Container></Container>}></Route>
                 <Route path="/hook-parent-child" element={<ParentFunction></ParentFunction>}></Route>
+                <Route path="/useeffect" element={<EffectContainer></EffectContainer>}></Route>
             </Routes>
         );
     }

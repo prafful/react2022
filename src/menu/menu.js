@@ -16,6 +16,7 @@ class Menu extends React.Component {
                 <Link to="/community">Community</Link> &nbsp;
                 <Link to="/hooks">Class/Hook</Link> &nbsp;
                 <Link to="/hook-parent-child">Hook(Parent->Child)</Link> &nbsp;
+                <Link to="/useeffect">useEffect</Link> &nbsp;
             </div>
         );
     }
