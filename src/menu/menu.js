@@ -14,6 +14,8 @@ class Menu extends React.Component {
                 <Link to="/lifecycle">Lifecycle</Link> &nbsp;
                 <Link to="/remote">Remote</Link> &nbsp;
                 <Link to="/community">Community</Link> &nbsp;
+                <Link to="/hooks">Class/Hook</Link> &nbsp;
+                <Link to="/hook-parent-child">Hook(Parent->Child)</Link> &nbsp;
             </div>
         );
     }

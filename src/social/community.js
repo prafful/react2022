@@ -150,6 +150,9 @@ class FriendsCommunity extends React.Component {
     navigateToUpdateNew=(id)=>{
         this.props.navigateNow({
             pathname:"/updatefriend" + "/" + id,
+            state:{
+                user:"dummy"
+            }
         })
     }
 

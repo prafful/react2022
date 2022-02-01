@@ -2,6 +2,8 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import CommentList from '../commentcontainer/commentlist';
 import TodoList from '../form/todo';
+import Container from '../functional/container';
+import ParentFunction from '../functional/hookparentchild';
 import Home from '../home/home';
 import Lifecycle from '../lifecycle/lifecycle';
 import Rainbow from '../rainbow/rainbow';
@@ -25,6 +27,8 @@ class Content extends React.Component {
                 <Route path="/community" element={<FriendsCommunity></FriendsCommunity>}></Route>
                 <Route path="/newfriend" element={<NewFriend></NewFriend>}></Route>
                 <Route path="/updatefriend/:id" element={<UpdateFriend></UpdateFriend>}></Route>
+                <Route path="/hooks" element={<Container></Container>}></Route>
+                <Route path="/hook-parent-child" element={<ParentFunction></ParentFunction>}></Route>
             </Routes>
         );
     }
