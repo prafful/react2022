@@ -35,15 +35,19 @@ function Countdown() {
     //only when respective dependency mentioned in an array is updated.
     useEffect(()=>{
         //let mytitle = document.title
+        let seconddiv = document.getElementById("second")
         let ref = setTimeout(()=>{
             setCounter(counter => counter + 3)
+            seconddiv.innerText = counter + ". I am being updated from useEffect."
         }, 1000)
         if (counter > 10) {
             console.log("clear useEffect")
-            clearTimeout(ref)
+            //clearTimeout(ref)
             //examine as to why clearTimeout(ref) in not clearing the reference (below). above is working fine.
             // return ()=>{
             //     console.log("I am used to dispose the sideeffects when not needed.")
+            //     seconddiv.innerText = counter + ". I want to remove reference to id with value = second."
+            //     seconddiv = null
             //     clearTimeout(ref)
             // }
         }

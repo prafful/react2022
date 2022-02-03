@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import CommentList from '../commentcontainer/commentlist';
 import TodoList from '../form/todo';
+import GrandParent from '../functional/usecontext/grandparent';
 import EffectContainer from '../functional/useeffect/effectcontainer';
 import ConsumeAPI from '../functional/useeffect/useeffectaxios';
 import Container from '../functional/usestate/container';
@@ -33,6 +34,7 @@ class Content extends React.Component {
                 <Route path="/hook-parent-child" element={<ParentFunction></ParentFunction>}></Route>
                 <Route path="/useeffect" element={<EffectContainer></EffectContainer>}></Route>
                 <Route path="/useeffect-axios" element={<ConsumeAPI></ConsumeAPI>}></Route>
+                <Route path="/usecontext" element={<GrandParent></GrandParent>}></Route>
             </Routes>
         );
     }
