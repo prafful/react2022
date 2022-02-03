@@ -18,7 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "api":"json-server ./datasource/friends.json"
+    "api": "json-server ./datasource/friends.json"
   },
   "eslintConfig": {
     "extends": [

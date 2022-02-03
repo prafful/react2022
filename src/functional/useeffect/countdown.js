@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 
 function Countdown() {
 
-    const [counter, setCounter] = useState(10)
+    const [counter, setCounter] = useState(1)
     const [tracker, setTracker] = useState(2)
     const [latitude, setLatitude] = useState(88.88)
 
@@ -29,13 +29,28 @@ function Countdown() {
     //     }, 1000)
     // } ,[])
 
-    //without dependency, useEffect will execute infinitely
-    //with [] as dependeny, useEffect will execute only once on first render
+    //with no second argument (dependency), useEffect will execute infinitely
+    //with empty array [] as dependency, useEffect will execute only once on first render
+    //with [somestatevalue, somepropvalue] as dependency, useEffect will execute on first render and 
+    //only when respective dependency mentioned in an array is updated.
     useEffect(()=>{
-        setTimeout(()=>{
+        //let mytitle = document.title
+        let ref = setTimeout(()=>{
             setCounter(counter => counter + 3)
         }, 1000)
-    }, [latitude, tracker])
+        if (counter > 10) {
+            console.log("clear useEffect")
+            clearTimeout(ref)
+            //examine as to why clearTimeout(ref) in not clearing the reference (below). above is working fine.
+            // return ()=>{
+            //     console.log("I am used to dispose the sideeffects when not needed.")
+            //     clearTimeout(ref)
+            // }
+        }
+        document.title = counter
+        
+    
+    }, [latitude])
 
     function changeTracker(){
         setTracker(t=>t*2)
