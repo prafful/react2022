@@ -19,6 +19,7 @@ class Menu extends React.Component {
                 <Link to="/useeffect">useEffect</Link> &nbsp;
                 <Link to="/useeffect-axios">useEffect (axios)</Link> &nbsp;
                 <Link to="/usecontext">useContext</Link> &nbsp;
+                <Link to="/customhook">Custom Hook</Link> &nbsp;
             </div>
         );
     }
