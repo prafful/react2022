@@ -6,7 +6,7 @@ import SingleFriend from './friend';
 
 function AllFriends() {
 
-    const [friends, setFriends] = useState([])
+    //const [friends, setFriends] = useState([])
     const [counter, setCounter] = useState(1)
 
     // useEffect(()=>{
@@ -22,44 +22,57 @@ function AllFriends() {
     //             })
     // }, [])
 
-    const friends = useAxiosGet("http://localhost:3000/allfriends", null)
- 
+    //const data = useAxiosGet("http://4bdb-2405-201-e02f-f818-a1af-4fb7-8c8e-2ca1.ngrok.io/allfriends", null, "GET")
+    const data = useAxiosGet("http://localhost:3000/allfriends", null, "GET")
+    console.log(data)
 
-    function editWithId(id){
+    function editWithId(id) {
         console.log("Edit friend with id: " + id);
     }
 
-    function printFriends(){
-        return friends.map((f, i)=>{
+    function printFriends() {
+        if (data === null) {
             return (
-               <SingleFriend key={i}
-                       name={f.name} 
-                       id = {i}
-                       editId= {editWithId}
-               ></SingleFriend>
+                <tr>
+                    <td>Loading the data from custom hook....</td>
+                    
+                </tr>
             )
-        })
+        } else {
+            return data.map((f, i) => {
+                return (
+                    <SingleFriend key={i}
+                        name={f.name}
+                        id={f.id}
+                        editId={editWithId}
+                    ></SingleFriend>
+                )
+            })
+        }
+
+
+
     }
 
-    return (  
+    return (
         <div>
             <div>
                 <br></br>
-                Response loaded....{friends.length}
+                {/* Response loaded....{data.length} */}
                 <table border="1">
-                <thead>
-                    <tr>
-                        <th>S.no</th>
-                        <th>Name</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                   {printFriends()}
-                </tbody>
+                    <thead>
+                        <tr>
+                            <th>S.no</th>
+                            <th>Name</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {printFriends()}
+                    </tbody>
                 </table>
             </div>
-            
+
         </div>
     );
 }
